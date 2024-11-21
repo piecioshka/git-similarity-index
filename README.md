@@ -15,14 +15,57 @@ I would like to calculate the similarity between two files. Unfortunately, but G
 
 ![](./screenshots/demo-similarity-index.png)
 
+## CLI
+
+```bash
+npm install -g git-similarity-index
+
+git-similarity-index path/to/file1 path/to/file2
+```
+
 ## Usage
 
 ```js
-import { getSimilarityIndexForFiles } from "git-similarity-index";
+import {
+  getSimilarityIndex,
+  getLinesBytes,
+  getSimilarityIndexForText,
+  getSimilarityIndexForFiles
+} from "git-similarity-index";
 
-const similarityIndex = getSimilarityIndexForFiles("path/to/file1", "path/to/file2");
+// getSimilarityIndex + getLinesBytes
+(function () {
+  const toBytes = (text) => Buffer.from(text).toJSON().data;
 
-console.log(similarityIndex); // 63.64
+  const firstPattern = "a\n";
+  const secondPattern = "a\nb";
+  const similarityIndex = getSimilarityIndex(
+    getLinesBytes(toBytes(firstPattern)),
+    getLinesBytes(toBytes(secondPattern)),
+    toBytes(secondPattern).length,
+  );
+  console.log(similarityIndex); // 66.67
+})();
+
+// getSimilarityIndexForText
+(function () {
+  const firstPattern = "a\nb\nc\n";
+  const secondPattern = "a\nb\nc\nd";
+  const similarityIndex = getSimilarityIndexForText(
+    firstPattern,
+    secondPattern,
+  );
+  console.log(similarityIndex); // 85.71
+})();
+
+// getSimilarityIndexForFiles
+(async function () {
+  const similarityIndex = await getSimilarityIndexForFiles(
+    "path/to/file1",
+    "path/to/file2",
+  );
+  console.log(similarityIndex); // 63.64
+})();
 ```
 
 ## License
