@@ -26,5 +26,5 @@ export async function getSimilarityIndexForFiles(
 ): Promise<number> {
   const content1 = await getGitFileContent(filename1);
   const content2 = await getRegularFileContent(filename2);
-  return await getSimilarityIndexForText(content1, content2);
+  return getSimilarityIndexForText(content1, content2);
 }

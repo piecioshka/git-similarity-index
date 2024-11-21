@@ -39,8 +39,8 @@ d
 e`,
       expected: 77.78,
     },
-  ])("should return $expected", async ({ a, b, expected }) => {
-    const result = await getSimilarityIndexForText(a, b);
+  ])("should return $expected", ({ a, b, expected }) => {
+    const result = getSimilarityIndexForText(a, b);
     expect(result).toBe(expected);
   });
 });

@@ -1,6 +1,6 @@
 import { getSimilarityIndex } from "./getSimilarityIndex";
 
-function getLinesBytes(bytes: number[]): number[][] {
+export function getLinesBytes(bytes: number[]): number[][] {
   return bytes.reduce(
     (acc: number[][], byte: number) => {
       if (byte === 10) {
@@ -15,16 +15,16 @@ function getLinesBytes(bytes: number[]): number[][] {
   );
 }
 
-export async function getSimilarityIndexForText(
+export function getSimilarityIndexForText(
   content1: string,
   content2: string
-): Promise<number> {
-  const bytes1 = await Buffer.from(content1).toJSON();
-  const file1 = getLinesBytes(bytes1.data);
+): number {
+  const bytes1 = Buffer.from(content1).toJSON();
+  const lineBytes1 = getLinesBytes(bytes1.data);
 
-  const bytes2 = await Buffer.from(content2).toJSON();
+  const bytes2 = Buffer.from(content2).toJSON();
   const size2 = bytes2.data.length;
-  const file2 = getLinesBytes(bytes2.data);
+  const lineBytes2 = getLinesBytes(bytes2.data);
 
-  return getSimilarityIndex(file1, file2, size2);
+  return getSimilarityIndex(lineBytes1, lineBytes2, size2);
 }

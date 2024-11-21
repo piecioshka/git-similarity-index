@@ -8,7 +8,7 @@ function isEqualArray(line1: number[], line2: number[]): boolean {
   return true;
 }
 
-function compareBytes(bytes1: number[][], bytes2: number[][]): number {
+function compareLineBytes(bytes1: number[][], bytes2: number[][]): number {
   return bytes1.reduce((acc: number, line1: number[]) => {
     bytes2.forEach((line2: any) => {
       const isEqual = isEqualArray(line1, line2);
@@ -21,10 +21,10 @@ function compareBytes(bytes1: number[][], bytes2: number[][]): number {
 }
 
 export function getSimilarityIndex(
-  bytes1: number[][],
-  bytes2: number[][],
+  lineBytes1: number[][],
+  lineBytes2: number[][],
   size2: number
 ): number {
-  const equalLines = compareBytes(bytes1, bytes2);
+  const equalLines = compareLineBytes(lineBytes1, lineBytes2);
   return Number(Number((equalLines / size2) * 100).toFixed(2));
 }

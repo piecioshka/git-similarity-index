@@ -33,7 +33,7 @@ suite("getSimilarityIndex", (test) => {
       c: 11,
       expected: 63.64,
     },
-  ])("should return $expected when files are $expected% equal", ({ a, b, c, expected }) => {
+  ])("should return $expected when lists are $expected% equal", ({ a, b, c, expected }) => {
     const result = getSimilarityIndex(a, b, c);
     expect(result).toBe(expected);
   });
