@@ -1,7 +1,7 @@
 {
   "name": "git-similarity-index",
   "description": "🔨 This simple tool calculates the similarity index between two files.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "license": "MIT",
   "author": {
     "name": "Piotr Kowalski",
