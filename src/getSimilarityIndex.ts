@@ -35,9 +35,9 @@ export function getSimilarityIndex(
     size2,
   });
   const equalLines = compareLineBytes(lineBytes1, lineBytes2);
-  const index = (equalLines / size2) * 100;
-  if (Number.isNaN(index)) {
+  const similarityIndex = (equalLines / size2) * 100;
+  if (Number.isNaN(similarityIndex)) {
     return 0;
   }
-  return Number(Number(index).toFixed(2));
+  return Number(Number(similarityIndex).toFixed(2));
 }
