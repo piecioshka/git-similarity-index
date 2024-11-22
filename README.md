@@ -85,9 +85,16 @@ import {
 The tool itself uses the `debug` library. You can enable debugging by setting the `DEBUG` environment variable.
 
 ```bash
+# to display all logs
 DEBUG=git-similarity-index:* git-similarity-index mocks/file1.txt mocks/file2.md
+
+# focus only of bytes
 DEBUG=git-similarity-index:bytes git-similarity-index mocks/file1.txt mocks/file2.md
+
+# focus only of text
 DEBUG=git-similarity-index:text git-similarity-index mocks/file1.txt mocks/file2.md
+
+# focus only of files
 DEBUG=git-similarity-index:files git-similarity-index mocks/file1.txt mocks/file2.md
 ```
 
