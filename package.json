@@ -14,11 +14,13 @@
     "coverage": "npm run test -- --coverage",
     "build": "tsc"
   },
+  "dependencies": {
+    "debug": "^4.3.7"
+  },
   "devDependencies": {
     "@types/debug": "^4.1.12",
     "@types/node": "^22.9.1",
     "@vitest/coverage-v8": "^2.1.5",
-    "debug": "^4.3.7",
     "typescript": "^5.6.3",
     "vitest": "^2.1.5"
   },
