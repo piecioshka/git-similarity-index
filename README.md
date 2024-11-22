@@ -68,6 +68,16 @@ import {
   );
   console.log(similarityIndex); // 46.34
 })();
+
+// getSimilarityIndexForFiles + useGit
+(async function () {
+  const similarityIndex = await getSimilarityIndexForFiles(
+    "mocks/file1.txt",
+    "mocks/file2.md",
+    { useGit: true },
+  );
+  console.log(similarityIndex); // 46.34
+})();
 ```
 
 ## License
