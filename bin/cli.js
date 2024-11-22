@@ -7,14 +7,14 @@ const args = process.argv.slice(2);
 const [filename1, filename2, ...params] = args;
 
 function displayUsage() {
-  console.log(`Usage: git-similarity-index <path1> <path2> [--use-git]
+  console.log(`Usage: git-similarity-index <path/to/file1> <path/to/file2> [--use-git]
 
 Options:
-  <path1>  Path to the file from File System or Git Repository if --use-git is provided (required)
-  <path2>  Path to the file from File System or Git Repository if --use-git is provided (required)
+  --use-git\tChange file access to use git commands instead of file system
 
 Examples:
-  git-similarity-index path1.txt path2.md`);
+  git-similarity-index path/to/file1.txt path/to/file2.md
+  git-similarity-index path/to/file1.txt path/to/file2.md --use-git`);
 }
 
 function displayHeader() {

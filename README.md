@@ -20,9 +20,9 @@ I would like to calculate the similarity between two files. Unfortunately, but G
 ```bash
 npm install -g git-similarity-index
 
-git-similarity-index path1 path2
+git-similarity-index mocks/file1.txt mocks/file2.md
 # or
-git-similarity-index path1 path2 --use-git
+git-similarity-index mocks/file1.txt mocks/file2.md --use-git
 ```
 
 ## Usage
@@ -66,7 +66,7 @@ import {
     "mocks/file1.txt",
     "mocks/file2.md",
   );
-  console.log(similarityIndex); // 63.64
+  console.log(similarityIndex); // 46.34
 })();
 ```
 
