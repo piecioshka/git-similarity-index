@@ -22,50 +22,34 @@ suite("getSimilarityIndex", (test) => {
       expected: 66.67,
     },
     {
-      lineBytes1: [
-        [1, 2],
-        [3, 4],
-      ],
-      lineBytes2: [
-        [5, 6],
-        [7, 8],
-      ],
+      // prettier-ignore
+      lineBytes1: [[1, 2], [3, 4]],
+      // prettier-ignore
+      lineBytes2: [[5, 6], [7, 8]],
       size2: 4,
       expected: 0,
     },
     {
-      lineBytes1: [
-        [1, 2],
-        [3, 4],
-      ],
-      lineBytes2: [
-        [1, 2],
-        [3, 4],
-      ],
+      // prettier-ignore
+      lineBytes1: [[1, 2], [3, 4]],
+      // prettier-ignore
+      lineBytes2: [[1, 2], [3, 4]],
       size2: 4,
       expected: 100,
     },
     {
-      lineBytes1: [
-        [1, 2],
-        [3, 4],
-      ],
-      lineBytes2: [
-        [1, 2],
-        [7, 8],
-      ],
+      // prettier-ignore
+      lineBytes1: [[1, 2], [3, 4]],
+      // prettier-ignore
+      lineBytes2: [[1, 2], [7, 8]],
       size2: 4,
       expected: 50,
     },
     {
-      lineBytes1: [
-        [1, 2],
-        [3, 4],
-      ],
-      lineBytes2: [
-        [1, 2],
-        [3, 4],
-      ],
+      // prettier-ignore
+      lineBytes1: [[1, 2], [3, 4]],
+      // prettier-ignore
+      lineBytes2: [[1, 2], [3, 4]],
       size2: 5,
       expected: 80,
     },
