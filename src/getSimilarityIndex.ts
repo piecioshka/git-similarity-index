@@ -10,7 +10,7 @@ function isEqualArray(line1: number[], line2: number[]): boolean {
 
 function compareLineBytes(bytes1: number[][], bytes2: number[][]): number {
   return bytes1.reduce((acc: number, line1: number[]) => {
-    bytes2.forEach((line2: any) => {
+    bytes2.forEach((line2) => {
       const isEqual = isEqualArray(line1, line2);
       if (isEqual) {
         acc += line1.length;
