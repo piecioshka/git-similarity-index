@@ -19,13 +19,12 @@ Examples:
 
 function displayHeader() {
   const author = `${pkg.author.name} <${pkg.author.email}> ${pkg.author.url}`;
-  console.log(`Copyright (c) ${new Date().getFullYear()} ${author}`);
-  console.log(`Version ${pkg.version}`);
+  console.log(`${pkg.name} v${pkg.version}`);
+  console.log(`Copyright (c) ${new Date().getFullYear()} ${author}\n`);
 }
 
 if (!filename1 || !filename2) {
   displayHeader();
-  console.log('');
   displayUsage();
   process.exit(1);
 }
