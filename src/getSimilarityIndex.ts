@@ -1,3 +1,7 @@
+import debug from "debug";
+
+const logger = debug("git-similarity-index:bytes");
+
 function isEqualArray(line1: number[], line2: number[]): boolean {
   const size1 = line1.length;
   const size2 = line2.length;
@@ -25,6 +29,15 @@ export function getSimilarityIndex(
   lineBytes2: number[][],
   size2: number
 ): number {
+  logger("Calculating similarity index for bytes", {
+    lineBytes1,
+    lineBytes2,
+    size2,
+  });
   const equalLines = compareLineBytes(lineBytes1, lineBytes2);
-  return Number(Number((equalLines / size2) * 100).toFixed(2));
+  const index = (equalLines / size2) * 100;
+  if (Number.isNaN(index)) {
+    return 0;
+  }
+  return Number(Number(index).toFixed(2));
 }
