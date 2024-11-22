@@ -1,6 +1,9 @@
 import * as fs from "fs/promises";
 import { exec, ExecException } from "child_process";
+import debug from "debug";
 import { getSimilarityIndexForText } from "./getSimilarityIndexForText";
+
+const logger = debug("git-similarity-index:files");
 
 async function getFileContentFromDisk(filename: string): Promise<string> {
   return await fs.readFile(filename, "utf-8");
@@ -25,6 +28,11 @@ export async function getSimilarityIndexForFiles(
   filename2: string,
   options: { useGit: boolean } = { useGit: false }
 ): Promise<number> {
+  logger("Calculating similarity index for files", {
+    filename1,
+    filename2,
+    options,
+  });
   let content1: string;
   let content2: string;
   if (options.useGit) {

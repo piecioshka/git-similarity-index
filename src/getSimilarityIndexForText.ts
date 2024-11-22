@@ -1,4 +1,7 @@
+import debug from "debug";
 import { getSimilarityIndex } from "./getSimilarityIndex";
+
+const logger = debug("git-similarity-index:text");
 
 export function getLinesBytes(bytes: number[]): number[][] {
   return bytes.reduce(
@@ -19,6 +22,7 @@ export function getSimilarityIndexForText(
   content1: string,
   content2: string
 ): number {
+  logger("Calculating similarity index for text", { content1, content2 });
   const bytes1 = Buffer.from(content1).toJSON();
   const lineBytes1 = getLinesBytes(bytes1.data);
 

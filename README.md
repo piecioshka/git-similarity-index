@@ -68,6 +68,27 @@ import {
   );
   console.log(similarityIndex); // 46.34
 })();
+
+// getSimilarityIndexForFiles + useGit
+(async function () {
+  const similarityIndex = await getSimilarityIndexForFiles(
+    "mocks/file1.txt",
+    "mocks/file2.md",
+    { useGit: true },
+  );
+  console.log(similarityIndex); // 46.34
+})();
+```
+
+## Debug
+
+The tool itself uses the `debug` library. You can enable debugging by setting the `DEBUG` environment variable.
+
+```bash
+DEBUG=git-similarity-index:* git-similarity-index mocks/file1.txt mocks/file2.md
+DEBUG=git-similarity-index:bytes git-similarity-index mocks/file1.txt mocks/file2.md
+DEBUG=git-similarity-index:text git-similarity-index mocks/file1.txt mocks/file2.md
+DEBUG=git-similarity-index:files git-similarity-index mocks/file1.txt mocks/file2.md
 ```
 
 ## License
