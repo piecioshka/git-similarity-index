@@ -4,43 +4,43 @@ import { getSimilarityIndexForText } from "./getSimilarityIndexForText";
 suite("getSimilarityIndexForText", (test) => {
   test.each([
     {
-      a: `e`,
-      b: `d
+      text1: `e`,
+      text2: `d
 e`,
       expected: 33.33,
     },
     {
-      a: `d
+      text1: `d
 e`,
-      b: `c
+      text2: `c
 d
 e`,
       expected: 60,
     },
     {
-      a: `c
+      text1: `c
 d
 e`,
-      b: `b
+      text2: `b
 c
 d
 e`,
       expected: 71.43,
     },
     {
-      a: `b
+      text1: `b
 c
 d
 e`,
-      b: `a
+      text2: `a
 b
 c
 d
 e`,
       expected: 77.78,
     },
-  ])("should return $expected", ({ a, b, expected }) => {
-    const result = getSimilarityIndexForText(a, b);
+  ])("should return $expected", ({ text1, text2, expected }) => {
+    const result = getSimilarityIndexForText(text1, text2);
     expect(result).toBe(expected);
   });
 });
