@@ -59,6 +59,12 @@ suite("getSimilarityIndex", (test) => {
       size2: 11,
       expected: 63.64,
     },
+    {
+      lineBytes1: [[97, 120, 32, 10], [98, 10], [99, 10], [100, 10], [101]],
+      lineBytes2: [[98, 10], [101]],
+      size2: 3,
+      expected: 100,
+    },
   ])(
     "should return $expected when lists are $expected% equal",
     ({ lineBytes1, lineBytes2, size2, expected }) => {
