@@ -72,4 +72,10 @@ suite("getSimilarityIndex", (test) => {
       expect(result).toBe(expected);
     }
   );
+
+  test("should throw an error for strange case", () => {
+    expect(() => getSimilarityIndex([[1]], [[1]], 0)).toThrowError(
+      "Similarity index is greater than 100"
+    );
+  });
 });
