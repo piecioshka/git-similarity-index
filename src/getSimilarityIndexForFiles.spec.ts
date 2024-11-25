@@ -19,4 +19,19 @@ suite("getSimilarityIndexForFiles", (test) => {
     );
     expect(similarityIndex).toBe(46.34);
   });
+
+  test("should throw an error for non existed files in Git Repo", async () => {
+    try {
+      // prettier-ignore
+      await getSimilarityIndexForFiles(
+        "mocks/file3.txt",
+        "mocks/file4.md",
+        { useGit: true }
+      );
+    } catch (error) {
+      expect(error).toBe(
+        "Error: fatal: path 'mocks/file3.txt' does not exist in 'HEAD'"
+      );
+    }
+  });
 });
