@@ -12,16 +12,27 @@ function isEqualArray(line1: number[], line2: number[]): boolean {
   return true;
 }
 
+/**
+ * Return number of equal lines in bytes
+ */
 function compareLineBytes(bytes1: number[][], bytes2: number[][]): number {
-  return bytes1.reduce((acc: number, line1: number[]) => {
-    bytes2.forEach((line2) => {
-      const isEqual = isEqualArray(line1, line2);
-      if (isEqual) {
-        acc += line1.length;
+  let sum = 0;
+
+  for (let i = 0; i < bytes1.length; i++) {
+    const line1 = bytes1[i];
+
+    for (let j = 0; j < bytes2.length; j++) {
+      const line2 = bytes2[j];
+
+      if (isEqualArray(line1, line2)) {
+        sum += line1.length;
+        bytes2.splice(j, 1);
+        break;
       }
-    });
-    return acc;
-  }, 0);
+    }
+  }
+
+  return sum;
 }
 
 export function getSimilarityIndex(
@@ -38,6 +49,9 @@ export function getSimilarityIndex(
   const similarityIndex = (equalLines / size2) * 100;
   if (Number.isNaN(similarityIndex)) {
     return 0;
+  }
+  if (similarityIndex > 100) {
+    throw new Error("Similarity index is greater than 100");
   }
   return Number(Number(similarityIndex).toFixed(2));
 }
