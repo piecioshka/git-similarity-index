@@ -10,7 +10,7 @@ export function getLinesBytes(bytes: number[]): number[][] {
         acc[acc.length - 1].push(10);
         acc.push([]);
       } else {
-        acc[acc.length - 1].unshift(byte);
+        acc[acc.length - 1].push(byte);
       }
       return acc;
     },
