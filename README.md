@@ -20,9 +20,9 @@ I would like to calculate the similarity between two files. Unfortunately, but G
 ```bash
 npm install -g git-similarity-index
 
-git-similarity-index mocks/file1.txt mocks/file2.md
+git-similarity-index mocks/file1.txt mocks/file2.txt
 # or
-git-similarity-index mocks/file1.txt mocks/file2.md --use-git
+git-similarity-index mocks/file1.txt mocks/file2.txt --use-git
 ```
 
 ## Usage
@@ -64,7 +64,7 @@ import {
 (async function () {
   const similarityIndex = await getSimilarityIndexForFiles(
     "mocks/file1.txt",
-    "mocks/file2.md",
+    "mocks/file2.txt",
   );
   console.log(similarityIndex); // 46.34
 })();
@@ -73,7 +73,7 @@ import {
 (async function () {
   const similarityIndex = await getSimilarityIndexForFiles(
     "mocks/file1.txt",
-    "mocks/file2.md",
+    "mocks/file2.txt",
     { useGit: true },
   );
   console.log(similarityIndex); // 46.34
@@ -86,16 +86,16 @@ The tool itself uses the `debug` library. You can enable debugging by setting th
 
 ```bash
 # to display all logs
-DEBUG=git-similarity-index:* git-similarity-index mocks/file1.txt mocks/file2.md
+DEBUG=git-similarity-index:* git-similarity-index mocks/file1.txt mocks/file2.txt
 
 # focus only of bytes
-DEBUG=git-similarity-index:bytes git-similarity-index mocks/file1.txt mocks/file2.md
+DEBUG=git-similarity-index:bytes git-similarity-index mocks/file1.txt mocks/file2.txt
 
 # focus only of text
-DEBUG=git-similarity-index:text git-similarity-index mocks/file1.txt mocks/file2.md
+DEBUG=git-similarity-index:text git-similarity-index mocks/file1.txt mocks/file2.txt
 
 # focus only of files
-DEBUG=git-similarity-index:files git-similarity-index mocks/file1.txt mocks/file2.md
+DEBUG=git-similarity-index:files git-similarity-index mocks/file1.txt mocks/file2.txt
 ```
 
 ## License

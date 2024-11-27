@@ -13,8 +13,8 @@ Options:
   --use-git\tChange file access to use git commands instead of file system
 
 Examples:
-  git-similarity-index path/to/file1.txt path/to/file2.md
-  git-similarity-index path/to/file1.txt path/to/file2.md --use-git`);
+  git-similarity-index path/to/file1.txt path/to/file2.txt
+  git-similarity-index path/to/file1.txt path/to/file2.txt --use-git`);
 }
 
 function displayHeader() {

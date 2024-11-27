@@ -6,7 +6,7 @@ suite("getSimilarityIndexForFiles", (test) => {
   test("should correct measure similarity index for files on disk", async () => {
     const similarityIndex = await getSimilarityIndexForFiles(
       path.join(__dirname, "../mocks/file1.txt"),
-      path.join(__dirname, "../mocks/file2.md")
+      path.join(__dirname, "../mocks/file2.txt")
     );
     expect(similarityIndex).toBe(46.34);
   });
@@ -14,7 +14,7 @@ suite("getSimilarityIndexForFiles", (test) => {
   test("should correct measure similarity index for files in Git repo", async () => {
     const similarityIndex = await getSimilarityIndexForFiles(
       "mocks/file1.txt",
-      "mocks/file2.md",
+      "mocks/file2.txt",
       { useGit: true }
     );
     expect(similarityIndex).toBe(46.34);
