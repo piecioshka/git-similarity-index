@@ -1,5 +1,6 @@
 # git-similarity-index
 
+[![cli-available](https://badgen.net/static/cli/available/?icon=terminal)](#cli)
 [![node version](https://img.shields.io/node/v/git-similarity-index.svg)](https://www.npmjs.com/package/git-similarity-index)
 [![npm version](https://badge.fury.io/js/git-similarity-index.svg)](https://badge.fury.io/js/git-similarity-index)
 [![downloads count](https://img.shields.io/npm/dt/git-similarity-index.svg)](https://www.npmjs.com/package/git-similarity-index)
