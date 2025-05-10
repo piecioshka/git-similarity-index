@@ -1,6 +1,6 @@
 {
   "name": "git-similarity-index",
-  "description": "🔨 This simple tool calculates the similarity index between two files.",
+  "description": "🔨 Calculates the similarity index between two files.",
   "version": "1.2.4",
   "license": "MIT",
   "author": {

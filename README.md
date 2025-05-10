@@ -8,7 +8,7 @@
 [![license](https://img.shields.io/npm/l/git-similarity-index.svg)](https://piecioshka.mit-license.org)
 [![github-ci](https://github.com/piecioshka/git-similarity-index/actions/workflows/testing.yml/badge.svg)](https://github.com/piecioshka/git-similarity-index/actions/workflows/testing.yml)
 
-🔨 This simple tool calculates the similarity index between two files.
+🔨 Calculates the similarity index between two files.
 
 ## Motivation
 
@@ -28,15 +28,11 @@ git-similarity-index mocks/file1.txt mocks/file2.txt --use-git
 
 ## Usage
 
-```js
-import {
-  getSimilarityIndex,
-  getLinesBytes,
-  getSimilarityIndexForText,
-  getSimilarityIndexForFiles
-} from "git-similarity-index";
+### `getSimilarityIndex` + `getLinesBytes`
 
-// getSimilarityIndex + getLinesBytes
+```js
+import { getSimilarityIndex, getLinesBytes } from "git-similarity-index";
+
 (function () {
   const toBytes = (text) => Buffer.from(text).toJSON().data;
 
@@ -49,8 +45,13 @@ import {
   );
   console.log(similarityIndex); // 66.67
 })();
+```
 
-// getSimilarityIndexForText
+### `getSimilarityIndexForText`
+
+```js
+import { getSimilarityIndexForText } from "git-similarity-index";
+
 (function () {
   const firstPattern = "a\nb\nc\n";
   const secondPattern = "a\nb\nc\nd";
@@ -60,8 +61,13 @@ import {
   );
   console.log(similarityIndex); // 85.71
 })();
+```
 
-// getSimilarityIndexForFiles
+### `getSimilarityIndexForFiles`
+
+```js
+import { getSimilarityIndexForFiles } from "git-similarity-index";
+
 (async function () {
   const similarityIndex = await getSimilarityIndexForFiles(
     "mocks/file1.txt",
@@ -69,8 +75,13 @@ import {
   );
   console.log(similarityIndex); // 46.34
 })();
+```
 
-// getSimilarityIndexForFiles + useGit
+### `getSimilarityIndexForFiles` (with `useGit` option)
+
+```js
+import { getSimilarityIndexForFiles } from "git-similarity-index";
+
 (async function () {
   const similarityIndex = await getSimilarityIndexForFiles(
     "mocks/file1.txt",
