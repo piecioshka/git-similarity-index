@@ -10,6 +10,8 @@
 
 🔨 Calculates the similarity index between two files.
 
+![](demo/git-similarity-index.gif)
+
 ## Motivation
 
 I would like to calculate the similarity between two files. Unfortunately, but Git does not provide a command that would count the ‘similarity index’. Therefore, I decided to write such a tool myself that counts this index.
