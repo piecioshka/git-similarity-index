@@ -114,4 +114,4 @@ DEBUG=git-similarity-index:files git-similarity-index mocks/file1.txt mocks/file
 
 ## License
 
-[The MIT License](https://piecioshka.mit-license.org) @ 2024
+[The MIT License](http://piecioshka.mit-license.org) @ 2026
