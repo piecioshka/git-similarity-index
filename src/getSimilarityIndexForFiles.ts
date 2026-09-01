@@ -1,5 +1,5 @@
 import * as fs from "fs/promises";
-import { exec, ExecException } from "child_process";
+import { execFile, ExecFileException } from "child_process";
 import debug from "debug";
 import { getSimilarityIndexForText } from "./getSimilarityIndexForText";
 
@@ -11,9 +11,10 @@ async function getFileContentFromDisk(filename: string): Promise<string> {
 
 async function getFileContentFromGit(filename: string): Promise<string> {
   return new Promise((resolve, reject) => {
-    exec(
-      `git show HEAD:${filename}`,
-      (error: ExecException | null, stdout: string, stderr: string) => {
+    execFile(
+      "git",
+      ["show", `HEAD:${filename}`],
+      (error: ExecFileException | null, stdout: string, stderr: string) => {
         if (error) {
           return reject(`Error: ${stderr}`.trim());
         }
