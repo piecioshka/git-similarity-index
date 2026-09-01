@@ -6,7 +6,7 @@
 [![downloads count](https://img.shields.io/npm/dt/git-similarity-index.svg)](https://www.npmjs.com/package/git-similarity-index)
 [![size](https://packagephobia.com/badge?p=git-similarity-index)](https://packagephobia.com/result?p=git-similarity-index)
 [![license](https://img.shields.io/npm/l/git-similarity-index.svg)](https://piecioshka.mit-license.org)
-[![github-ci](https://github.com/piecioshka/git-similarity-index/actions/workflows/testing.yml/badge.svg)](https://github.com/piecioshka/git-similarity-index/actions/workflows/testing.yml)
+[![github-ci](https://github.com/piecioshka/git-similarity-index/actions/workflows/ci.yml/badge.svg)](https://github.com/piecioshka/git-similarity-index/actions/workflows/ci.yml)
 
 🔨 Calculates the similarity index between two files.
 
